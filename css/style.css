@@ -96,6 +96,7 @@ p{
 .col-3 img{
     width: 100%;/*utilize full col-3 width which has min-width of 250 px*/
 }
+.hidden {display:none;} /*to hide an element*/
 /*featured products*/
 /*small container edit whole section consist of rows*/
 .small container{
