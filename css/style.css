@@ -342,6 +342,38 @@ select:focus{
     color: #ffff;
 }
 /*single product details*/
+.col-4 {
+    position: relative;
+}
+.product:hover .productOver {
+    top:0%;
+    left:0%;
+    bottom: 0%;
+    right: 0%;
+    background-color: black;
+    position: absolute;
+    opacity: 90%    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease;
+}
+.productOver i {
+    color: #fff;
+    font-size: 30px;
+    opacity: 100%;
+    background-color: orangered;
+    border-radius: 100%;
+    padding:20px;
+    display: none;
+    transition: .5s ease;
+}
+.productOver:hover i {
+    display: block;
+}
+.productOver:hover i:hover {
+    background-color: orange;
+}
 .single-product{
     margin-top: 80px;
 }
