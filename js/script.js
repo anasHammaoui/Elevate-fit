@@ -27,12 +27,23 @@
 // Global variables for filtring
 let sorting = document.getElementById('sorting');
 let categorie = document.getElementById("wCategorie");
-let price = document.getElementById("wCategorie");
 let productNames = document.querySelectorAll('.product-name');
-let a = 0;
+// price variables
+let priceDiv = document.getElementById('price-div');
+let priceRange = document.getElementById('priceRange');
+let price = document.getElementById("p");
+let productsPrice = document.querySelectorAll(".pro-price");
 sorting.addEventListener('change', ()=> {
+
 //  Filter with category
     if(sorting.value == "categorie") {
+            // hide all other sorting
+    priceDiv.classList.add("hidden");
+    productNames.forEach((product) => {
+        product.parentNode.classList.remove("hidden");
+    })
+    // ************
+    // start sorting by categorie
         categorie.classList.remove("hidden");
        categorie.addEventListener("change", ()=>{
         productNames.forEach((product) =>{
@@ -46,9 +57,29 @@ sorting.addEventListener('change', ()=> {
     })
        })
      } else if (sorting.value == "price") { //filter with price
-        price.classList.remove("hidden");
-     } else {
+           // hide all other sorting
         categorie.classList.add("hidden");
-        
+        productNames.forEach((product) => {
+        product.parentNode.classList.remove("hidden");
+    })
+        // start sorting by price
+        priceDiv.classList.remove("hidden");
+        priceRange.addEventListener("change", ()=> {
+            productsPrice.forEach((productPrice) => {
+                let priceInt = parseInt(productPrice.textContent.replace('$',''));
+               if(priceRange.value <= priceInt) {
+                productPrice.parentNode.classList.add("hidden");
+               } else{
+                productPrice.parentNode.classList.remove("hidden");
+               }
+            })
+        })
+     } else {
+        // hide all other sorting
+        priceDiv.classList.add("hidden");
+        categorie.classList.add("hidden");
+        productNames.forEach((product) => {
+        product.parentNode.classList.remove("hidden");
+    })
      }
 })
