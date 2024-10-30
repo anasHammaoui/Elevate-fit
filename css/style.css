@@ -342,21 +342,25 @@ select:focus{
     color: #ffff;
 }
 /*single product details*/
-.col-4 {
+.pro-img{
     position: relative;
 }
-.product:hover .productOver {
-    top:0%;
-    left:0%;
-    bottom: 0%;
-    right: 0%;
-    background-color: black;
+.productOver{
     position: absolute;
-    opacity: 90%    ;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: black;
+    display: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .5s ease;
+    visibility: hidden;
+    opacity: 90%;
+}
+.pro-img:hover .productOver{
+    visibility: visible;
 }
 .productOver i {
     color: #fff;
