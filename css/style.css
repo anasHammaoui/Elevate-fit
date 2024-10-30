@@ -63,7 +63,7 @@ p{
 .col-2 p{
     margin-left:25px;
 }
-
+.cursor-pointer{cursor: pointer;}
 /*design header button explore now*/
 .btn{
     display: inline-block;

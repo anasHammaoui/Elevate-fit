@@ -83,3 +83,16 @@ sorting.addEventListener('change', ()=> {
     })
      }
 })
+// product page
+let productsImg = document.querySelectorAll("#pro-img");
+productNames.forEach((name,index)=> {
+    name.addEventListener("click",()=> {
+        // setproduct title to localstrorage
+        localStorage.setItem("productName", name.textContent);
+        // setproduct price to localstrorage
+            let priceInt = parseInt(productsPrice[index].textContent.replace('$',''));
+             localStorage.setItem("productPrice", productsPrice[index].textContent);
+        // set product image to local storage
+            localStorage.setItem("productImg", productsImg[index].src)
+   })
+})  
