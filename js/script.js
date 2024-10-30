@@ -40,19 +40,19 @@ sorting.addEventListener('change', ()=> {
             // hide all other sorting
     priceDiv.classList.add("hidden");
     productNames.forEach((product) => {
-        product.parentNode.classList.remove("hidden");
+        product.parentNode.parentNode.classList.remove("hidden");
     })
     // ************
     // start sorting by categorie
         categorie.classList.remove("hidden");
        categorie.addEventListener("change", ()=>{
         productNames.forEach((product) =>{
-            product.parentNode.classList.remove("hidden");
+            product.parentNode.parentNode.classList.remove("hidden");
             let splited =product.innerHTML.split(' ');
             if (categorie.value == "All"){
-                product.parentNode.classList.remove("hidden");
+                product.parentNode.parentNode.classList.remove("hidden");
             } else if (!(splited.includes(categorie.value))) {
-                product.parentNode.classList.add("hidden");
+                product.parentNode.parentNode.classList.add("hidden");
             }
     })
        })

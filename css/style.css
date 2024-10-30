@@ -40,6 +40,7 @@ p{
     padding-left: 25px;
     padding-right: 25px;
 }
+
 /*dividing text and image in haif*/
 .row{
     display: flex;/*flexible content*/
@@ -99,7 +100,7 @@ p{
 .hidden {display:none;} /*to hide an element*/
 /*featured products*/
 /*small container edit whole section consist of rows*/
-.small container{
+.small .container{
     max-width: 1080px;
     margin:auto;/*make images in center*/
     padding-left: 25px;
@@ -458,7 +459,7 @@ td input{
 }
 td a{
     color: #ff523b;
-    ffont-size: 12px;
+    font-size: 12px;
 }
 td img{
     width: 80px;
@@ -474,12 +475,12 @@ td small{
     display: flex;
     justify-content: flex-end;/*put content with max width at the end, if flex start, then put content at start with max width as we mentioned max width below*/
 }
-.total-price table{
+.total-price tr{
     border-top: 3px solid #ff523b;
     width: 100%;
     max-width: 480px;
 }
-td:last-child{
+.total-price tr td:last-child{
     text-align: right;/*align all last column values to right, in our case, these are prices*/
 }
 th:last-child{
@@ -556,14 +557,29 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 }
-
-
-
-
-
-
-
-
+/* background colors */
+.bg-orange{
+    background-color: #ff523b;
+}
+.text-orange {
+    color: #ff523b;
+}
+.text-white {
+    color: #fff;
+}
+/* display */
+.d-inline{
+    display: inline;
+}
+.d-flex{
+    display: flex;
+}
+.justify-content-start{
+    justify-content: flex-start;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
 
 
 
