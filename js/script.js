@@ -79,7 +79,7 @@ function addCartItems(title,img,price,quant) {
     let test = 0;
     productsInPanier.name.forEach((pro,i)=>{
         if (pro === title){
-            productsInPanier.quant[i] +=1;
+            productsInPanier.quant[i] = parseInt(productsInPanier.quant[i]) + 1;
             test =1;
         }
     })

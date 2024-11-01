@@ -20,7 +20,7 @@ function addCartItems(title,img,price,quant) {
     let test = 0;
     productsInPanier.name.forEach((pro,i)=>{
         if (pro === title){
-            productsInPanier.quant[i] +=1;
+            productsInPanier.quant[i] = parseInt(document.getElementById("quanti").value);
             test =1;
         }
     })
@@ -37,12 +37,7 @@ function addCartItems(title,img,price,quant) {
         let proImg = document.getElementById("product-img").src;
         let proName = document.querySelector("#product-page-name").textContent;
         let proPrice = parseInt(document.querySelector("#product-price").textContent.replace('$',''));
-        let proQuant= document.getElementById("quanti").value;
-        // let proQuant = 1;
-        // proQuantChange.addEventListener("change",()=>{
-        //     proQuant++;
-        //     console.log(proQuant)
-        // })
+        let proQuant= parseInt(document.getElementById("quanti").value);
         addCartItems(proName,proImg,proPrice,proQuant);
         localStorage.setItem("ProPanierDetail",JSON.stringify(cartItems));
     })

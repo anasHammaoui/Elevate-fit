@@ -1,17 +1,3 @@
-// // add to from hover icon in product
-// let tr = document.createElement("tr");  
-// let td = document.createElement("td");
-// let img = document.createElement("img");
-// let div = document.createElement("div");
-// let p = document.createElement("p");
-// let small = document.createElement("small");
-// let span = document.createElement("span");
-
-// localStorage.setItem("pannierContent",document.getElementById("pannierContent").outerHTML);
-// document.getElementById("pannierContent").remove()
-
-
-
 let productsInPanier = JSON.parse(localStorage.getItem("ProPanierDetail")) || {name :  [], prices: [], imgs: [],quant: []};
 let bodyContent = document.getElementById("body-content");
 let totalContent = document.querySelector(".tab-price");
@@ -22,7 +8,7 @@ productsInPanier.name.forEach((_, i) => {
 <td class="row justify-content-start" >
     <img id="cart-img" src=${productsInPanier.imgs[i]} alt="product">
     <div>
-        <p data-title="${productsInPanier.name[i]}">${productsInPanier.name[i]}</p>
+        <p id="data-title" data-title="${productsInPanier.name[i]}">${productsInPanier.name[i]}</p>
     <small>Price: <span data-price="${productsInPanier.prices[i]}">$${productsInPanier.prices[i]}</span></small>
     <span id="remove" class="text-orange cursor-pointer">Remove</span>
     </div>
@@ -47,8 +33,7 @@ totalContent.innerHTML = `
         </tbody>
 `
 
-// show total price in navbar
-document.getElementById("home-price").innerHTML = `$${tot}`;
+
     // remove funtion
     let remove = document.querySelectorAll("#remove");
 remove.forEach((r,i)=>{
@@ -62,9 +47,15 @@ remove.forEach((r,i)=>{
     tot = tot - (productsInPanier.prices[i] * productsInPanier.quant[i]); 
     })
 })
-let inputValue = document.querySelector("quant").value;
-inputValue.addEventListener("change",()=>{
-    tot = tot*inputValue;
+// show total price in navbar
+document.getElementById("home-price").innerHTML = `$${tot}`;
+// increase price when increase quanitity at cart
+let quantInput = document.querySelectorAll("#quant");
+quantInput.forEach((q,i)=>{
+    q.addEventListener("change",()=>{
+        productsInPanier.quant[i] = q.value;
+        localStorage.setItem("ProPanierDetail",JSON.stringify(productsInPanier));
+    })
 })
     // total price
     localStorage.setItem("totalPrice",tot);
