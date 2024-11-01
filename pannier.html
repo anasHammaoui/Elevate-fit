@@ -58,7 +58,7 @@
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
+                <li id="home-price">&#36;0.00</li>
                 <li><a href="pannier.html"><i class='fas fa-shopping-cart text-orange'></i></a></li>
 
             </ul>
@@ -80,39 +80,11 @@
                 <th class="col">Subtotal</th>
               </tr>
           </thead>
-          <tbody>
-            <tr>
-                <td class="row justify-content-start" >
-                    <img id="cart-img" src="images/gallery-1.jpg" alt="product">
-                    <div>
-                        <p data-title="red printed t-shirt">red printed t-shirt</p>
-                    <small>Price: <span data-price="50">$50</span></small>
-                    <span id="remove" class="text-orange cursor-pointer">Remove</span>
-                    </div>
-                </td>
-                <td><input type="number" name="quantity" id="quant" value="1"></td>
-                <td data-totPrice="50">$50.00</td>
-            </tr>
-            <tr>
-                <td class="row justify-content-start" >
-                    <img id="cart-img" src="images/gallery-1.jpg" alt="product">
-                    <div>
-                        <p data-title="red printed t-shirt">red printed t-shirt</p>
-                    <small>Price: <span data-price="50">$50</span></small>
-                    <span id="remove" class="text-orange cursor-pointer">Remove</span>
-                    </div>
-                </td>
-                <td><input type="number" name="quantity" id="quant" value="1"></td>
-                <td data-totPrice="50">$50.00</td>
-            </tr>
+          <tbody id="body-content">
+           
           </tbody>
-          <table >
-            <tbody class="total-price">
-            <tr class="d-flex justify-content-between">
-                <td>Total</td>
-                <td data-total="200">200$</td>
-            </tr>
-        </tbody>
+          <table class="mt-2 tab-price">
+           
           </table>
          </table>
         </section>
@@ -172,7 +144,7 @@
 
     <!-----------------JS----------------------->
 
-
+<script src="js/panier.js"></script>
 </body>
 
 </html>

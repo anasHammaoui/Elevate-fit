@@ -581,8 +581,8 @@ form a{
     justify-content: space-between;
 }
 
-
-
+/* margin/ padding */
+.mt-2 {margin-top:20px}
 
 /*----------media query for each and every item display on mobile or screen size less than 600px---------------*/
 

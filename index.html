@@ -45,7 +45,7 @@
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
+                <li id="home-price">&#36;0.00</li>
                 <li><a href="pannier.html"><i class='fas fa-shopping-cart text-orange'></i></a></li>
 
             </ul>
@@ -475,7 +475,10 @@
 
     <!-----------------JS----------------------->
 
-
+<script>
+   let total = localStorage.getItem("totalPrice");
+   document.getElementById("home-price").innerHTML = `$${total}`;
+</script>
 </body>
 
 </html>

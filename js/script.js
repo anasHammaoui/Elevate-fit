@@ -1,29 +1,3 @@
-// JS for Single product detail
-
-
-        // var ProductImg = document.getElementById("product-img");//larger image
-        // var SmallImg = document.getElementsByClassName("small-img");//it returns list of 4 images having index 0,1,2,3 as we have 4 images with class name "small0-img" 
-
-        // SmallImg[0].onclick = function()//when user click on first image or images at 0 index, it will display as ProdcutImg.src replace with clicked or SmallImg[0], so we get smallimg[0] in bigger form, similarly when click on smallimg[1], it will display in bigger picture and so on 
-        // {
-        //     ProductImg.src = SmallImg[0].src;   
-        // }
-
-        // SmallImg[1].onclick = function()
-        // {
-        //     ProductImg.src = SmallImg[1].src;   
-        // }
-
-        // SmallImg[2].onclick = function()
-        // {
-        //     ProductImg.src = SmallImg[2].src;   
-        // }
-
-        // SmallImg[3].onclick = function()
-        // {
-        //     ProductImg.src = SmallImg[3].src;   
-        // }
-
 // Global variables for filtring
 let sorting = document.getElementById('sorting');
 let categorie = document.getElementById("wCategorie");
@@ -93,6 +67,38 @@ productNames.forEach((name,index)=> {
             let priceInt = parseInt(productsPrice[index].textContent.replace('$',''));
              localStorage.setItem("productPrice", productsPrice[index].textContent);
         // set product image to local storage
-            localStorage.setItem("productImg", productsImg[index].src)
+            localStorage.setItem("product-Img", productsImg[index].src)
    })
+})  
+// cart page
+let productsInPanier = JSON.parse(localStorage.getItem("ProPanierDetail")) || {name :  [], prices: [], imgs: [], quant: []};
+
+const cartIcons = document.querySelectorAll('#cart-icon');
+let cartItems = productsInPanier;
+function addCartItems(title,img,price,quant) {
+    let test = 0;
+    productsInPanier.name.forEach((pro,i)=>{
+        if (pro === title){
+            productsInPanier.quant[i] +=1;
+            test =1;
+        }
+    })
+ 
+         if (test !=1) {
+            cartItems.name.push(title);
+            cartItems.prices.push(price);
+            cartItems.imgs.push(img);
+            cartItems.quant.push(quant);    
+         }
+}
+
+cartIcons.forEach((cart) => {
+    cart.addEventListener("click", ()=> {
+        let proImg = cart.parentNode.parentNode.querySelector("#pro-img").src;
+        let proName = cart.parentNode.parentNode.parentNode.querySelector(".product-name").textContent;
+        let proPrice = parseInt(cart.parentNode.parentNode.parentNode.querySelector(".pro-price").textContent.replace('$',''));
+        let proQuant = 1;
+        addCartItems(proName,proImg,proPrice,proQuant);
+        localStorage.setItem("ProPanierDetail",JSON.stringify(cartItems));
+    })
 })  
