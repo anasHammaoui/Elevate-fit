@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--we have added this view port tag and set initial scale to 1 so that our side shoudl be adjustable according to different devices especially for mobile devices-->
-    <title>Panier</title>
+    <title>elevateFit | Checkout </title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/banner.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
@@ -33,10 +33,22 @@
         .panier{
             margin:60px auto;
         }
-        /* .panier .row{
-            justify-content: space-between;
-            padding:5px 7px;
-        } */
+        .checkout-heading h2::after {
+            width:120px;
+            content: '';
+            height: 7px;
+            background-color: orangered;
+            border-radius: 5px;
+            display: block;
+            margin:12px auto
+        }
+        .my-2{margin:32px 0;}
+        .mb-1{margin-bottom: 16px;}
+        .text-center{text-align: center;}
+        .text-secondary-emphasis{color: #2b2f32;}
+        .fw-bold{font-weight: bold;}
+        .mb-5{margin-bottom:80px ;}
+        .bg-secondary-subtle{background-color: #e2e3e5;}
     </style>
 </head>
 
@@ -47,7 +59,7 @@
 
         <nav id="nav">
 
-            <img src="./images/logo-white.png" class="logo">
+            <img src="images/logo-white.png" class="logo">
 
             <ul class="menu-bar-side">
                 <li><a href="index.html" style=" all: unset;">Home</a></li>
@@ -67,84 +79,79 @@
         </nav>
 
 
+
+
     </header>
     <!--- end header --->
 
-        <section class="container panier">
-         <table>
+    <section class="checkout ">
+        <!-- heading -->
+        <div class="checkout-heading text-center my-2 mb-5">
+            <h2 class="fw-bold fs-2 text-secondary-emphasis">Product Order Form</h2>
+        </div>
+        <div class="div row checkout-box bg-secondary-subtle">
+            <div class="col-2"></div>
+        </div>
+    </section>
 
-          <thead>
-            <tr>
-                <th class="col-2">Product</th>
-                <th class="col">Quantity</th>
-                <th class="col">Subtotal</th>
-              </tr>
-          </thead>
-          <tbody id="body-content">
-           
-          </tbody>
-          <table class="mt-2 tab-price">
-           
-          </table>
-         </table>
-        </section>
+<!-------footer------->
+ <div class="footer">
+    <div class="container">
+        <div class="row">
 
        
-    <!-------footer------->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and Ios mobile phone.</p>
 
-           
-                <div class="footer-col-1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Android and Ios mobile phone.</p>
-
-                  
-                    <div class="app-logo">
-                        <img src="./images/play-store.png">
-                        <img src="./images/app-store.png">
-                    </div>
-
+              
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
                 </div>
 
-                <div class="footer-col-2">
-                    <img src="./images/logo-white.png">
-                    <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
-                    </p>
-                </div>
-
-                <div class="footer-col-3">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-
-                </div>
-
-                <div class="footer-col-4">
-                    <h3>Follow Us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>Youtube</li>
-                    </ul>
-
-                </div>
             </div>
-            
-            <hr>
-            <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
+
+            <div class="footer-col-2">
+                <img src="images/logo-white.png">
+                <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                </p>
+            </div>
+
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+
+            </div>
+
+            <div class="footer-col-4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+
+            </div>
         </div>
+        
+        <hr>
+        <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
     </div>
+</div>
 
-    <!-----------------JS----------------------->
+<!-----------------JS----------------------->
 
-<script src="js/panier.js"></script>
+<script>
+let total = localStorage.getItem("totalPrice");
+document.getElementById("home-price").innerHTML = `$${total}`;
+</script>
 </body>
 
 </html>

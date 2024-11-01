@@ -32,6 +32,7 @@ productsInPanier.name.forEach((_, i) => {
 </tr>
     `;
 })
+
 // set total to localstorage
 productsInPanier.name.forEach((_,i) => {
     tot = tot + (productsInPanier.prices[i] * productsInPanier.quant[i]); 
@@ -61,6 +62,9 @@ remove.forEach((r,i)=>{
     tot = tot - (productsInPanier.prices[i] * productsInPanier.quant[i]); 
     })
 })
-
+let inputValue = document.querySelector("quant").value;
+inputValue.addEventListener("change",()=>{
+    tot = tot*inputValue;
+})
     // total price
     localStorage.setItem("totalPrice",tot);
