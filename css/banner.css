@@ -185,7 +185,9 @@
       position:absolute;
       top:92px;;
     }
-    .hidden{display: none;}
+    @media screen and (max-width:850px) {
+      .hidden{display: none !important;}
+  }
     header nav ul:nth-child(2):after{
       content:"\27A7";
       position:absolute;

@@ -24,9 +24,9 @@
   
   
   
- 
-  .hidden{display: none;}
-  
+  @media screen and (max-width:850px) {
+    .hidden{display: none !important;}
+}
   header nav{
     background:rgb(0 0 0 / 30%);
     color:var(--white);
