@@ -267,8 +267,7 @@ padding: 30px;
 
             <!-- Order Details -->
             <div class="order-details">
-                <p>Subtotal <span class="amount">$88.00</span></p>
-                <p>Shipping <span class="shipping">Free shipping</span></p>
+                
             </div>
             
             <hr>
@@ -354,7 +353,6 @@ padding: 30px;
 
 <script>
    let total = localStorage.getItem("totalPrice");
-   document.querySelector(".amount").innerHTML = `$${total}`;
    document.querySelector("#home-price").innerHTML = `$${total}`;
     // form validation
     let form = document.forms["order-form"];
@@ -376,7 +374,19 @@ padding: 30px;
             e.preventDefault();
         }
     })
-        //    toggle nav
+    // name and price in order summary
+    let orderDetails =  document.querySelector(".order-details");
+    let productsInPanier = JSON.parse(localStorage.getItem("ProPanierDetail")) || {name :  [], prices: [], imgs: [],quant: []};
+    productsInPanier.name.forEach((pro,i)=>{
+        orderDetails.innerHTML += `
+            <p>${pro} <span class="amount">$${productsInPanier.prices[i]}.00</span></p>
+        `
+    })
+    orderDetails.innerHTML += `
+            <p>Subtotal <span class="amount">$${total}.00</span></p>
+                <p>Shipping <span class="shipping">Free shipping</span></p>
+        `
+    //    toggle nav
         document.querySelector(".fa-bars").addEventListener("click",()=>{
         document.querySelector(".menu-bar-side").classList.toggle("hidden");
         document.querySelector(".menu-bar").classList.toggle("hidden");
