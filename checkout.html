@@ -171,9 +171,10 @@ padding: 30px;
         @media screen and (max-width:850px) {
     .hidden{display: none !important;}
 }
+.overflow{overflow: hidden;}
     </style>
 </head>
-<body>
+<body class="body">
         <!--making header-->
         <header>
 
@@ -390,6 +391,7 @@ padding: 30px;
         document.querySelector(".fa-bars").addEventListener("click",()=>{
         document.querySelector(".menu-bar-side").classList.toggle("hidden");
         document.querySelector(".menu-bar").classList.toggle("hidden");
+        document.querySelector(".body").classList.toggle("overflow");
 })
 </script>
 </body>

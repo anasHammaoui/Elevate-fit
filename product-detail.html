@@ -12,11 +12,35 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!---- icon cdn link---->
+        <style>
+                    header{
+            background:none;
+            height:auto;
+        }
+        .panier{
+            margin:60px auto;
+        }
+        /* .panier .row{
+            justify-content: space-between;
+            padding:5px 7px;
+        } */
+         .btn{
+            display: block;
+    width: 150px;
+    text-align: center;
+    margin-left: auto;
+         }
+         @media screen and (max-width:850px) {
+    .hidden{display: none !important;}
+}
+.overflow{overflow: hidden;}
 
+            .overflow{overflow: hidden;}
+        </style>
 
     </head>
 
-    <body>
+    <body class="body">
 
        
         
@@ -237,6 +261,12 @@
 <script>
     let total = localStorage.getItem("totalPrice");
     document.getElementById("home-price").innerHTML = `$${total}`;
+                //    toggle nav
+document.querySelector(".fa-bars").addEventListener("click",()=>{
+        document.querySelector(".menu-bar-side").classList.toggle("hidden");
+        document.querySelector(".menu-bar").classList.toggle("hidden");
+        document.querySelector(".body").classList.toggle("overflow");
+})
  </script>
     </body>
 

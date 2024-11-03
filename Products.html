@@ -22,6 +22,7 @@
     .nav .hidden{display: none !important;}
 }
 .small .hidden{display: none;}
+.overflow{overflow: hidden;}
 </style>
 </head>
 
@@ -392,6 +393,7 @@
 document.querySelector(".fa-bars").addEventListener("click",()=>{
         document.querySelector(".menu-bar-side").classList.toggle("hidden");
         document.querySelector(".menu-bar").classList.toggle("hidden");
+        document.querySelector(".body").classList.toggle("overflow");
 })
  </script>
 </body>
