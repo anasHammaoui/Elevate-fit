@@ -354,7 +354,9 @@ padding: 30px;
 
 <script>
    let total = localStorage.getItem("totalPrice");
-   document.querySelector("#home-price").innerHTML = `$${total}`;
+   if (total != null) {
+   document.getElementById("home-price").innerHTML = `$${total}`;
+    }
     // form validation
     let form = document.forms["order-form"];
     let inputs=  document.querySelectorAll(".form-control");

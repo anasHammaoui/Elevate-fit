@@ -60,4 +60,8 @@ quantInput.forEach((q,i)=>{
     })
 })
     // total price
-    localStorage.setItem("totalPrice",tot);
+    if (tot < 1 || tot == null) {
+        tot = 0;
+    }
+    console.log(tot);
+localStorage.setItem("totalPrice",tot);

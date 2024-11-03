@@ -484,8 +484,10 @@
 
 <script>
    let total = localStorage.getItem("totalPrice");
+    if (total != null) {
    document.getElementById("home-price").innerHTML = `$${total}`;
-//    toggle nav
+    }
+   //    toggle nav
 document.querySelector(".fa-bars").addEventListener("click",()=>{
         document.querySelector(".menu-bar-side").classList.toggle("hidden");
         document.querySelector(".menu-bar").classList.toggle("hidden");
