@@ -283,8 +283,9 @@ ul{
 }
 /*we have to display menu icon for small screens only and hide it for larger screens*/
 
+
 /*menu icon will be visible for width of page less than 800px, above 800px or larger screen it will not be visible and we get navbar */
-@media only screen and (max-width:800px){
+@media only screen and (max-width:800px){   
     nav ul{/*for whole dropdown menu chart*/
         /* position: absolute;
         top: 70px;
@@ -486,77 +487,7 @@ td small{
 th:last-child{
     text-align: right;
 }
-/*account page*/
-.account-page{
-    padding: 50px 0;
-    background: radial-gradient(#fff, #ffd6d6);
 
-}
-.form-container{/* in account page first column, we place an image, and in second coloumn we place form having following specs*/
-    background: #fff;
-    width: 300px;
-    height: 400px;
-    position: relative;
-    text-align: center;
-    padding: 20px 0;
-    margin: auto;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 1);
-    overflow: hidden;
-}
-.form-container span{
-    font-weight: bold;
-    padding: 0 10px;
-    color: #555555;
-    cursor: pointer;
-    width: 100px;
-    display: inline-block;
-}
-.form-btn{
-    display: inline-block;
-}
-.form-container form{
-    max-width: 300px;
-    padding: 0 20px;
-    position:absolute;
-    top: 130px;
-    transition: transform 1s;
-
-}
-form input{
-    width: 100%;
-    height: 30px;
-    margin: 10px 0;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-}
-form .btn{
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0; 
-}
-form .btn:focus{
-    outline: none;
-}
-#LoginForm{
-    left: -300px;
-     
-}
-#RegForm{
-    left: 0;
-}
-form a{
-    font-size: 12px;
-}
-#Indicator{
-    width: 100px;
-    border: none;
-    background: #ff523b;
-    height: 3px;
-    margin-top: 8px;
-    transform: translateX(100px);
-    transition: transform 1s;
-}
 /* background colors */
 .bg-orange{
     background-color: #ff523b;

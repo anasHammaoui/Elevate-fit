@@ -25,6 +25,7 @@
   
   
  
+  .hidden{display: none;}
   
   header nav{
     background:rgb(0 0 0 / 30%);
@@ -36,7 +37,6 @@
   #nav {
     position: sticky;
     top: 0;
-    overflow: hidden;
     z-index: 122;
     background-color: rgb(7, 7, 7);
   }
@@ -83,7 +83,6 @@
   
   
  
-  
   /*---- media queary min--0px & max--599px ----*/
   
   @media (min-width: 0px) and (max-width:599px) {
@@ -95,7 +94,7 @@
     }
     
     header nav ul:nth-child(2){
-      background:rgba(0, 52, 82,.15);
+      background:black;
       color:var(--white);
       display:block;
       Width:auto;
@@ -104,10 +103,9 @@
       padding:30px 30px;
       transition:all .5s;
       position:absolute;
-      left:-162px;
-      top:92px;
+      top:92px;;
     }
-    
+    .hidden{display: none;}
     header nav ul:nth-child(2):after{
       content:"\27A7";
       position:absolute;
@@ -118,7 +116,7 @@
     }
     
     header nav ul:nth-child(2):after:hover{
-      color:#ff523b;
+      color: #ff523b;
     }
     
     header nav ul:nth-child(3){
@@ -129,11 +127,9 @@
       top:92px;
       Width:200px;
       height:0px;
-      overflow:hidden;
       text-align:center;
       transition:all .5s;
     }
-    
     
     header nav ul:nth-child(3) li{
       margin:5px 0;
@@ -160,10 +156,30 @@
     
     header nav .fa-bars:hover,
     header nav .fa-remove:hover{
-      color:#ff523b;
+      color: #ff523b;
     }
     
     
-   
+    header .content{
+      left:0px;
+      width:100%;
+      top: 52%;
+      padding:0 30px;
+      font-size: 12px;
+    }
+    
+    header .content .heading{
+      font-size:2.1em;
+    }
+    
+    header .content h4{
+      font-size:1.1em;
+    }
+    
+    header .content button{
+      font-size:.80em;
+    }
+    
     
   }
+  header{background: none ;height: auto;}

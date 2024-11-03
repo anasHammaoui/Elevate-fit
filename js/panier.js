@@ -30,7 +30,9 @@ totalContent.innerHTML = `
                 <td>Total</td>
                 <td data-total="0">$${tot}</td>
             </tr>
-        </tbody>
+</tbody>
+<a href="checkout.html" class="btn">Buy Now</a>
+
 `
 
 

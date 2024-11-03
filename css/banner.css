@@ -56,7 +56,6 @@
   #nav {
     position: sticky;
     top: 0;
-    overflow: hidden;
     z-index: 122;
     background-color: rgb(7, 7, 7);
   }
@@ -175,7 +174,7 @@
     }
     
     header nav ul:nth-child(2){
-      background:rgba(0, 52, 82,.15);
+      background:black;
       color:var(--white);
       display:block;
       Width:auto;
@@ -184,10 +183,9 @@
       padding:30px 30px;
       transition:all .5s;
       position:absolute;
-      left:-162px;
-      top:92px;
+      top:92px;;
     }
-    
+    .hidden{display: none;}
     header nav ul:nth-child(2):after{
       content:"\27A7";
       position:absolute;
@@ -209,11 +207,9 @@
       top:92px;
       Width:200px;
       height:0px;
-      overflow:hidden;
       text-align:center;
       transition:all .5s;
     }
-    
     
     header nav ul:nth-child(3) li{
       margin:5px 0;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--we have added this view port tag and set initial scale to 1 so that our side shoudl be adjustable according to different devices especially for mobile devices-->
-    <title>elevateFit | Checkout </title>
+    <title>elevateFit | Checkout Page</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/banner.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
@@ -26,131 +26,360 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!--- owl carsoul ---->
     <style>
-        header{
-            background:none;
-            height:auto;
+       /* Header */
+header { background-color: none; height: auto; }
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Page Title */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.title-underline {
+    display: block;
+    width: 200px;
+    height: 3px;
+    background-color: #ff5722;
+    margin: 8px auto 32px auto;
+}
+.text-danger{color: rgb(220,53,69);}
+.row {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+padding: 30px;
+}
+.footer .row{background: none;}
+.form-container {
+    width: 65%;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 30%;
+    color: #333;
+}
+
+.form-control, .form-select {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+}
+.form-control:focus{background-color: #e8f0fe;}
+.form-select:focus{border:1px solid orangered}
+.form-control-secondary {
+    margin-top: 5px;
+}
+
+/* Order Summary */
+.order-summary {
+    width: 320px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    }
+
+.summary-header {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+.order-details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.order-details p .amount {
+    color: #00a887;
+}
+
+.shipping {
+    color: #00a887;
+}
+
+.payment-options {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.payment-option {
+    margin-bottom: 12px;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.payment-option label {
+    vertical-align: middle;
+}
+
+.bank-description {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    background-color: #52ad9c;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.btn:hover {
+    background-color: #3cccb2;
+}
+/* error message */
+.error {
+            border: 2px solid red;
         }
-        .panier{
-            margin:60px auto;
-        }
-        .checkout-heading h2::after {
-            width:120px;
-            content: '';
-            height: 7px;
-            background-color: orangered;
-            border-radius: 5px;
-            display: block;
-            margin:12px auto
-        }
-        .my-2{margin:32px 0;}
-        .mb-1{margin-bottom: 16px;}
-        .text-center{text-align: center;}
-        .text-secondary-emphasis{color: #2b2f32;}
-        .fw-bold{font-weight: bold;}
-        .mb-5{margin-bottom:80px ;}
-        .bg-secondary-subtle{background-color: #e2e3e5;}
+        .hidden{display: none !important;}
     </style>
 </head>
-
 <body>
+        <!--making header-->
+        <header>
 
-    <!--making header-->
-    <header>
+            <nav id="nav">
+    
+                <img src="./images/logo-white.png" class="logo">
+    
+                <ul class="menu-bar-side hidden">
+                    <li><a href="index.html" style=" all: unset;">Home</a></li>
+                    <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                    <li><a href="#" style=" all: unset;">about</a></li>
+                    <li><a href="#" style=" all: unset;">contact us</a></li>
+                </ul>
+    
+                <ul class="menu-bar hidden">
+    
+                    <li id="home-price">&#36;0.00</li>
+                    <li><a href="pannier.html"><i class='fas fa-shopping-cart text-orange'></i></a></li>
+    
+                </ul>
+    
+                <i class="fa fa-bars"></i>
+            </nav>
+    
+    
 
-        <nav id="nav">
-
-            <img src="images/logo-white.png" class="logo">
-
-            <ul class="menu-bar-side">
-                <li><a href="index.html" style=" all: unset;">Home</a></li>
-                <li><a href="Products.html" style=" all: unset;">Shope</a></li>
-                <li><a href="#" style=" all: unset;">about</a></li>
-                <li><a href="#" style=" all: unset;">contact us</a></li>
-            </ul>
-
-            <ul class="menu-bar">
-
-                <li id="home-price">&#36;0.00</li>
-                <li><a href="pannier.html"><i class='fas fa-shopping-cart text-orange'></i></a></li>
-
-            </ul>
-
-            <i class="fa fa-bars"></i>
-        </nav>
-
-
-
-
-    </header>
-    <!--- end header --->
-
-    <section class="checkout ">
-        <!-- heading -->
-        <div class="checkout-heading text-center my-2 mb-5">
-            <h2 class="fw-bold fs-2 text-secondary-emphasis">Product Order Form</h2>
-        </div>
-        <div class="div row checkout-box bg-secondary-subtle">
-            <div class="col-2"></div>
-        </div>
-    </section>
-
-<!-------footer------->
- <div class="footer">
+    
+        </header>
+        <!--- end header --->
+    
+    <!-- Order Form Section -->
     <div class="container">
-        <div class="row">
-
-       
-            <div class="footer-col-1">
-                <h3>Download Our App</h3>
-                <p>Download App for Android and Ios mobile phone.</p>
-
-              
-                <div class="app-logo">
-                    <img src="images/play-store.png">
-                    <img src="images/app-store.png">
+        <h2>Product Order Form</h2>
+        <span class="title-underline"></span>
+          <form class="row" name="order-form" id="form">
+            <!-- Form Container -->
+            <div class="form-container">
+            <div class="form-group">
+                <label for="firstName">First Name <sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" id=" firstName" placeholder="Anas">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name <sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" id=" lastName" placeholder="Hammaoui">
+            </div>
+            <div class="form-group">
+                <label for="companyName">Company Name (Optional)</label>
+                <input type="text" class="form-control" id=" companyName" placeholder="yc">
+            </div>
+            <div class="form-group">
+                <label for="country">Country <sup class="text-danger">*</sup> </label>
+                <select class="form-select" id="country">
+                    <option selected>Mexico</option>
+                    <option>Morocco</option>
+                    <option>USA</option>
+                    <option>France</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="streetAddress">Street Address <sup class="text-danger">*</sup> </label>
+                <div>
+                    <input type="text" class="form-control" id=" streetAddress" placeholder="Route Rabat Imm 5 N°14">
+                    <input type="text" class="form-control control-secondary" placeholder="Apartment, suite, unit etc. (optional)">
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="city">Town / City <sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" id=" city" placeholder="Tanger">
+            </div>
+            <div class="form-group">
+                <label for="state">State / County <sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" id=" state">
+            </div>
+            <div class="form-group">
+                <label for="zip">Postcode / ZIP <sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" id=" zip" placeholder="90060">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone <sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" name ="number" id="phone">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address <sup class="text-danger">*</sup> </label>
+                <input type="email" class="form-control" id=" email" placeholder="contact@gmail.com">
+            </div>
+            </div>
+                 <!-- Order Summary Section -->
+         <div class="order-summary">
+            <!-- Order Summary Header -->
+            <div class="summary-header ">Your order</div>
 
+            <!-- Order Details -->
+            <div class="order-details">
+                <p>Subtotal <span class="amount">$88.00</span></p>
+                <p>Shipping <span class="shipping">Free shipping</span></p>
+            </div>
+            
+            <hr>
+
+            <!-- Payment Options -->
+            <div class="payment-options">
+                <div class="payment-option">
+                    <input type="radio" name="paymentMethod" id="bankTransfer" checked>
+                    <label for="bankTransfer">Direct Bank Transfer</label>
+                    <div class="bank-description">
+                        Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                    </div>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="paymentMethod" id="cod">
+                    <label for="cod">Cash on Delivery</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="paymentMethod" id="paypal">
+                    <label for="paypal">PayPal</label>
+                </div>
             </div>
 
-            <div class="footer-col-2">
-                <img src="images/logo-white.png">
-                <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
-                </p>
-            </div>
-
-            <div class="footer-col-3">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li>Coupons</li>
-                    <li>Blog Post</li>
-                    <li>Return Policy</li>
-                    <li>Join Affiliate</li>
-                </ul>
-
-            </div>
-
-            <div class="footer-col-4">
-                <h3>Follow Us</h3>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>Instagram</li>
-                    <li>Youtube</li>
-                </ul>
-
-            </div>
+            <!-- Place Order Button -->
+            <input type="submit" value="Place Order" class="btn" name="submit">
         </div>
         
-        <hr>
-        <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
+                </form>
     </div>
-</div>
 
-<!-----------------JS----------------------->
+    <!-------footer------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+
+           
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios mobile phone.</p>
+
+                    <div class="app-logo">
+                        <img src="./images/play-store.png">
+                        <img src="./images/app-store.png">
+                    </div>
+
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="./images/logo-white.png">
+                    <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+
+                </div>
+            </div>
+            
+            <hr>
+            <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
+        </div>
+    </div>
+
+    <!-----------------JS----------------------->
 
 <script>
-let total = localStorage.getItem("totalPrice");
-document.getElementById("home-price").innerHTML = `$${total}`;
+   let total = localStorage.getItem("totalPrice");
+   document.querySelector(".amount").innerHTML = `$${total}`;
+   document.querySelector("#home-price").innerHTML = `$${total}`;
+    // form validation
+    let form = document.forms["order-form"];
+    let inputs=  document.querySelectorAll(".form-control");
+
+    form.addEventListener("submit", (e)=>{
+        let isValid = true;
+        inputs.forEach(input=> {
+            if (input.value.trim() === "") {
+                isValid = false;
+                input.classList.add("error");
+            } else{
+                input.classList.remove("error");
+            }
+        })
+        if(!isValid) {
+            alert("all fileds must be filled!");
+            isValid = true;
+            e.preventDefault();
+        }
+    })
+        //    toggle nav
+        document.querySelector(".fa-bars").addEventListener("click",()=>{
+        document.querySelector(".menu-bar-side").classList.toggle("hidden");
+        document.querySelector(".menu-bar").classList.toggle("hidden");
+})
 </script>
 </body>
 
